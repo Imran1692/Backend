@@ -3,7 +3,7 @@ class ApiError extends errpr {
         statusCode,
         massage="something went wrong",
         errors=[],
-        statck=""
+        stack=""
     ){
         super(massage)
         this.statusCode = statusCode
@@ -12,7 +12,7 @@ class ApiError extends errpr {
         this.success = false;
         this.errors = errors
 
-        if(statck){
+        if(stack){
             this.stack = this.stack
         }else{
             Error.captureStackTrace(this, this.constructor)
