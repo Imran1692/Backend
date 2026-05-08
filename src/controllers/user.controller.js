@@ -172,7 +172,7 @@ const logoutUser = asyncHandler(async (req, res) => {
     return req
         .status(200)
         .clearCookie("accessToken", options)
-        .clearCookie("refreshToken", i]options)
+        .clearCookie("refreshToken", options)
         .json(new ApiResponse(200, {}, "user logged out"))
 })
 
@@ -219,8 +219,8 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
                 )
             )
     } catch (error) {
-        throw new ApiError(401,error?.massage || "invalid refresh token")
+        throw new ApiError(401, error?.massage || "invalid refresh token")
     }
 
 })
-export { registerUser, loginUser, logoutUser ,refreshAccessToken }
+export { registerUser, loginUser, logoutUser, refreshAccessToken }
